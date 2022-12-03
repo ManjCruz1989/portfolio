@@ -1,38 +1,357 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  width: 100vw;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nav{
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.logo{
+  font-size: xx-large;
+  flex: 0 1 auto;
+  margin-right: auto;
+  margin-left: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-list{
   text-align: center;
+  flex: 0 1 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-dropdown{
+  display: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 950px) {
+  .nav-list li{
+   display: none;
   }
+  .nav-dropdown{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin-right: 1rem;
+    cursor: pointer;
+    z-index: 999;
+  }
+  .nav-dropdown span{
+    margin: 2px;
+  }
+  .nav-dropdown hr{
+    width: 1.5rem;
+  }
+  .nav-list{
+   position: static;
+  }
+  .dropdown{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    color: white;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    background-color: #2b2b2b;
+    overflow: hidden;
+    box-shadow: 0 2px 0 gray;
+    font-size: xx-large;
+    z-index: 999;
+  }
+
+  .dropdown li{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+ 
+  .dropdown ul{
+    flex-direction: column;
+  }
+ 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav ul{
+  list-style: none;
+  display: flex;
+}
+
+.nav li{
+font-size: large;
+margin-left: 4rem;
+margin-right: 4rem;
+cursor: pointer;
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover{
+  opacity: 0.5;
+}
+
+.home{
+  position: relative;
+  
+}
+
+.slides{
+  position: relative;
+}
+
+.home-top{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: xx-large;
+  text-align: center;
+  letter-spacing: 0.2rem;
+ }
+
+ .home-middle{
+  clip-path: polygon(100% 0%, 100% 61%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  background-color: #7a9cff;
+  width: 83.3%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+ }
+ @media only screen and (max-width: 950px) {
+  .home-middle{
+   clip-path: polygon(100% 0%, 67% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+   width: 75%;
+   left: 0;
+  }}
+
+
+  .home-bg{
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 49%, 0% 0%);
+    background-color: #d9fad7;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+  }
+
+  @media only screen and (max-width: 950px) {
+    .home-bg{
+     width: 100%;
+    }}
+
+.home-text{
+  margin: 0 2rem 9rem;
+  background-image: linear-gradient(60deg, #E21143, #3b5998, #00acee);
+  background-clip: text;
+  color: transparent;
+  font-size: 40px;
+  z-index: 999;
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (max-width: 950px) {
+  .home-text{
+   font-size: x-large;
+  }}
+  @media only screen and (max-height: 380px) {
+    .home-text{
+     font-size: large;
+    }}
+
+.home-title{
+  display: flex;
+  color: gray;
+  align-items: center;
+  margin: 4rem 5rem 4rem;
+  font-size: xx-large;
+  font-weight: 500;
+  z-index: 998;
+}    
+
+.home-btns{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 17rem;
+  margin-bottom: 4rem;
+  z-index: 998;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.socials{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  width: 10rem;
+  z-index: 999;
+}
+
+.instagram{
+  color: red;
+  font-size: xx-large !important;
+  cursor: pointer;
+}
+
+.facebook{
+  color: #3b5998;
+  font-size: xx-large !important;
+  cursor: pointer;
+}
+
+.twitter{
+  color: #00acee;
+  font-size: xx-large !important;
+  cursor: pointer;
+}
+
+.about-top{
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-title{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  align-items: center;
+  font-size: xx-large;
+}
+
+.about-hr{
+  width: 50%;
+  margin-bottom: 4rem;
+}
+
+.about-text{
+  display: flex;
+  padding: 0 2rem;
+  font-size: x-large;
+}
+
+.contact{
+  display: flex;
+  width: 100vw;
+  height: 100%;
+  justify-content: center;
+}
+
+.contact-wrap{
+display: flex;
+margin-top: 15%;
+
+}
+@media only screen and (max-width: 950px) {
+  .contact-wrap{
+    margin-top: 5%;
+   flex-direction: column;
+   width: 90%;
+   top: 0;
+  }}
+
+.contact-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-basis: 50%;
+  min-width: 0;
+}
+
+.contact-h h2{
+  text-align: center;
+  margin: 1rem 0 1rem;
+  font-size: xx-large;
+  color: gray;
+}
+
+.contact-p{
+ display: flex;
+ margin: 2rem 0 0;
+ text-align: center;
+ padding: 0 5px;
+}
+
+.contact-p p{
+  margin: 0 2rem;
+  padding: 0;
+  font-size: large;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.1rem;
+}
+@media only screen and (max-width: 950px) {
+  .contact-p p{
+   margin: 0 14% ;
+  }}
+
+.contact-methods{
+  display: flex;
+  justify-content: space-between;
+  margin: 3.5rem 0;
+}
+@media only screen and (max-width: 950px) {
+  .contact-methods{
+   margin: 5% 0;
+  }}
+
+.contact-form-div{
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  flex-basis: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form{
+  height: 100%;
+  width: 100%;
+display: flex;  
+align-items: center;
+flex-direction: column;
+}
+
+.contact-form input{
+  width: 70%;
+  margin-top: 1rem;
+  height: 40px;
+  border-radius: 7px;
+  border-width: 1px;
+  padding: 3px;
+}
+@media only screen and (max-width: 950px) {
+  .contact-form input .message{
+   width: 58%;
+  }}
+.message{
+  width: 70%;
+  margin-top: 1rem;
+  height: 70px;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2px;
+  border-radius: 7px;
+  border-width: 1px;
+  padding: 3px;
 }
